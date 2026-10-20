@@ -14,9 +14,9 @@ export default function Navbar() {
       <div className="flex items-center space-x-6">
         {isSignedIn ? (
           <div className="flex items-center space-x-2">
-            {user?.profileImageUrl && (
+            {user?.imageUrl && (
               <img
-                src={user.profileImageUrl}
+                src={user.imageUrl}
                 alt="Profile"
                 width={32}
                 height={32}

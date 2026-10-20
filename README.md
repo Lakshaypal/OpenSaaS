@@ -1,36 +1,53 @@
-![Company Logo](https://avatars.githubusercontent.com/u/193474771?s=200&v=4)
+# OpenSaaS
 
-# OpenSaaS Project
+A Next.js interface starter with Clerk sign-in/sign-up screens, an animated landing page, feature cards and a contact-form prototype.
 
-## 🚀 About the Project
+This repository is a fork of [gdgdtu/OpenSaaS](https://github.com/gdgdtu/OpenSaaS). Upstream authorship and the fork relationship are preserved.
 
-Open SaaS (Open Source Software as a Service) is a business and software delivery model that combines the principles of open-source software with the convenience of Software as a Service (SaaS). This platform is designed to help, offering a user-friendly and highly customizable solution for bussinesses.
+## Implemented scope
 
-Whether you're a startup, developer, or a business owner, OpenSaaS makes work seamless and efficient.
+- Next.js App Router and React components.
+- Clerk provider, account controls and sign-in/sign-up pages.
+- Tailwind styling, Framer Motion animations and Vercel Analytics integration.
+- Client-side contact-form validation and a local submission confirmation.
 
----
+Payment, organisation-management and role-management cards describe the intended product direction; they are not complete backend features. The contact form does not send email or persist submissions.
 
-## 📦 Managing the Project with `package.json`
+## Development
 
-The `package.json` file is the cornerstone of the OpenSaaS project. It manages dependencies, scripts, and project metadata, enabling contributors to efficiently run and build the project.
+Use Node.js 20+ and npm:
 
----
+```sh
+git clone https://github.com/Lakshaypal/OpenSaaS.git
+cd OpenSaaS
+npm ci
+```
 
-## 📜 License
+Create `.env.local` using your own Clerk development application's configuration:
 
-This project is licensed under the [MIT License](LICENSE).
+```dotenv
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_publishable_key
+CLERK_SECRET_KEY=your_secret_key
+```
 
----
+Keep the secret key out of Git and browser code.
 
-## 🤝 Acknowledgements
+```sh
+npm run dev
+```
 
-- Thanks to [Google Developer Student Club Team]
+Open `http://localhost:3000`.
 
----
+```sh
+npm run build
+npm start
+```
 
-## 📧 Contact
+## Structure
 
-- **Creator/Owner Name**
-- Website: [https://dsc-dtu.github.io/]
-- LinkedIn: [LinkedIn Profile](https://www.linkedin.com/company/dsc-dtu/)
-- GitHub: [GitHub Profile](https://github.com/gdgdtu)
+- `src/app/`: application layout, landing page and authentication routes.
+- `src/components/ui/`: navbar, feature cards, form and shared controls.
+- `src/components/variants/`: animation settings.
+- `src/lib/utils.ts`: class-name utilities.
+
+Authentication UI is present, but a production application still needs its own server-side access controls and feature backend.
